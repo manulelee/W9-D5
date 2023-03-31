@@ -1,30 +1,19 @@
 import { Component } from "react";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
+import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 class MyNavbar extends Component {
   render() {
     return (
-      <Nav className="navbar navbar-expand-lg navbar-dark">
-        <Nav.Item>
-          <Nav.Link>
-            <img src="./assets/images/netflix_logo.png" alt="logo Netflix" id="logo" />
-          </Nav.Link>
-        </Nav.Item>
-        <Button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#homenavbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </Button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <Navbar expand="md" className="navbar-dark">
+        <Navbar.Brand>
+          <img src="./assets/images/netflix_logo.png" alt="logo Netflix" id="logo" />
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse>
+          <Nav className="me-auto mb-2 mb-lg-0">
             <Nav.Item>
               <Nav.Link>Home</Nav.Link>
             </Nav.Item>
@@ -40,9 +29,9 @@ class MyNavbar extends Component {
             <Nav.Item>
               <Nav.Link>My List</Nav.Link>
             </Nav.Item>
-          </ul>
+          </Nav>
 
-          <ul className="navbar-nav">
+          <Nav className="d-none d-md-flex ">
             <Nav.Item>
               <Nav.Link>
                 <svg
@@ -88,9 +77,9 @@ class MyNavbar extends Component {
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey="4.4"> Logout</NavDropdown.Item>
             </NavDropdown>
-          </ul>
-        </div>
-      </Nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }

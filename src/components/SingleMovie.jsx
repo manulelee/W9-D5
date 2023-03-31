@@ -5,7 +5,7 @@ class SingleMovie extends Component {
   render() {
     return (
       <Col xs={6} md={6} lg={3}>
-        <img className="img-fluid movie-cover" src={this.props.poster} alt="movie poster" />
+        <img className="img-fluid poster" src={this.props.poster} alt="movie poster" />
       </Col>
     );
   }
