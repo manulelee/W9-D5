@@ -1,5 +1,11 @@
-body {
+body,
+nav {
   background-color: #000 !important;
+}
+#generi {
+  width: 100px !important;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 #logo {

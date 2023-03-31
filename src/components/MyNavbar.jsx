@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 class MyNavbar extends Component {
   render() {
     return (
-      <Navbar expand="md" className="navbar-dark">
+      <Navbar expand="md" className="navbar-dark sticky-top">
         <Navbar.Brand>
           <img src="./assets/images/netflix_logo.png" alt="logo Netflix" id="logo" />
         </Navbar.Brand>
