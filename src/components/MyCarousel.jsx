@@ -1,5 +1,6 @@
 import { Component } from "react";
-import Carousel from "react-bootstrap/Carousel";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import SingleMovie from "./SingleMovie";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -9,6 +10,24 @@ class MyCarousel extends Component {
     movies: [],
     isLoading: true,
     isError: false,
+  };
+  responsive = {
+    xl: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 6,
+    },
+    lg: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 6,
+    },
+    md: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 4,
+    },
+    xs: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2,
+    },
   };
   getMovies = async () => {
     try {
@@ -44,15 +63,11 @@ class MyCarousel extends Component {
   render() {
     return (
       <>
-        <h2 className="text-light mt-2 mb-2">{this.props.nameSaga} saga:</h2>
-        <Carousel>
-          <Carousel.Item>
-            <Row>
-              {this.state.movies.map((movie) => (
-                <SingleMovie key={movie.imbdID} poster={movie.Poster} />
-              ))}
-            </Row>
-          </Carousel.Item>
+        <h2 className="text-light mt-2 mb-2 b mx-4">{this.props.nameSaga} saga:</h2>
+        <Carousel className="mx-4" responsive={this.responsive} infinite={true}>
+          {this.state.movies.map((movie) => (
+            <SingleMovie key={movie.imbdID} poster={movie.Poster} />
+          ))}
         </Carousel>
       </>
     );
