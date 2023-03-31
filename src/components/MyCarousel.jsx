@@ -2,8 +2,6 @@ import { Component } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SingleMovie from "./SingleMovie";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 
 class MyCarousel extends Component {
   state = {
